@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download Button Challenge</title>
+  <style>
+    :root {
+      --bg: #f6efe4;
+      --card: #fffaf2;
+      --text: #1f1a14;
+      --accent: #c4512d;
+      --accent-dark: #8f361d;
+      --line: #e2cdb9;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      background:
+        radial-gradient(circle at top left, #fff4dc 0, transparent 35%),
+        linear-gradient(135deg, #f9f1e7 0%, #f0dfc8 100%);
+      color: var(--text);
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      padding: 32px;
+    }
+
+    .card {
+      width: min(980px, 100%);
+      background: var(--card);
+      border: 3px solid var(--line);
+      border-radius: 28px;
+      padding: 48px;
+      box-shadow: 0 24px 70px rgba(82, 45, 20, 0.12);
+    }
+
+    h1 {
+      margin: 0 0 20px;
+      font-size: clamp(2.5rem, 5vw, 4.8rem);
+      line-height: 1.05;
+    }
+
+    p {
+      font-size: clamp(1.2rem, 2vw, 1.65rem);
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+
+    .task-box {
+      margin-top: 28px;
+      padding: 28px;
+      border: 2px dashed var(--accent);
+      border-radius: 20px;
+      background: #fff;
+    }
+
+    h2 {
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      margin: 0 0 16px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 28px;
+      font-size: clamp(1.1rem, 1.8vw, 1.5rem);
+      line-height: 1.8;
+    }
+
+    .example-button {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 18px 34px;
+      font-size: 1.35rem;
+      font-weight: 700;
+      text-decoration: none;
+      color: #fff;
+      background: var(--accent);
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(196, 81, 45, 0.28);
+    }
+
+    .example-button:hover {
+      background: var(--accent-dark);
+    }
+
+    .note {
+      margin-top: 24px;
+      font-size: clamp(1rem, 1.4vw, 1.25rem);
+      color: #5c4737;
+    }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <h1>HTML Download Button Challenge</h1>
+    <p>Create a single HTML page with CSS written inside the same file.</p>
+    <p>Your page must include a button that lets the user download an image or a file when they click it.</p>
+
+    <section class="task-box">
+      <h2>Student Instructions</h2>
+      <ul>
+        <li>Use only one HTML file.</li>
+        <li>Write your CSS inside the HTML file using the `style` tag.</li>
+        <li>Add a clear download button.</li>
+        <li>Make the page neat, colorful, and easy to read.</li>
+        <li>Host the project on GitHub Pages.</li>
+        <li>Share the live GitHub Pages link with me.</li>
+      </ul>
+    </section>
+
+    <a class="example-button" href="#" download>Download Example</a>
+
+    <p class="note">Tip: Replace the example link with a real image or file in your own project before publishing.</p>
+  </main>
+<!-- Code injected by live-server -->
+<script>
+	// <![CDATA[  <-- For SVG support
+	if ('WebSocket' in window) {
+		(function () {
+			function refreshCSS() {
+				var sheets = [].slice.call(document.getElementsByTagName("link"));
+				var head = document.getElementsByTagName("head")[0];
+				for (var i = 0; i < sheets.length; ++i) {
+					var elem = sheets[i];
+					var parent = elem.parentElement || head;
+					parent.removeChild(elem);
+					var rel = elem.rel;
+					if (elem.href && typeof rel != "string" || rel.length == 0 || rel.toLowerCase() == "stylesheet") {
+						var url = elem.href.replace(/(&|\?)_cacheOverride=\d+/, '');
+						elem.href = url + (url.indexOf('?') >= 0 ? '&' : '?') + '_cacheOverride=' + (new Date().valueOf());
+					}
+					parent.appendChild(elem);
+				}
+			}
+			var protocol = window.location.protocol === 'http:' ? 'ws://' : 'wss://';
+			var address = protocol + window.location.host + window.location.pathname + '/ws';
+			var socket = new WebSocket(address);
+			socket.onmessage = function (msg) {
+				if (msg.data == 'reload') window.location.reload();
+				else if (msg.data == 'refreshcss') refreshCSS();
+			};
+			if (sessionStorage && !sessionStorage.getItem('IsThisFirstTime_Log_From_LiveServer')) {
+				console.log('Live reload enabled.');
+				sessionStorage.setItem('IsThisFirstTime_Log_From_LiveServer', true);
+			}
+		})();
+	}
+	else {
+		console.error('Upgrade your browser. This Browser is NOT supported WebSocket for Live-Reloading.');
+	}
+	// ]]>
+</script>
+</body>
+</html>
